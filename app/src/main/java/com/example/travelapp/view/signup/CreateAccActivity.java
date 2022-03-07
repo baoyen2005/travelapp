@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.travelapp.R;
 import com.example.travelapp.base.BaseActivity;
 import com.example.travelapp.controller.createaccount.CreateAccController;
+import com.example.travelapp.view.home.HomeActivity;
 import com.example.travelapp.view.login.InterfaceLoginView;
 import com.example.travelapp.view.login.LoginActivity;
 
@@ -160,6 +161,9 @@ public class CreateAccActivity extends BaseActivity implements InterfaceLoginVie
     @Override
     public void OnLoginSuccess(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CreateAccActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
